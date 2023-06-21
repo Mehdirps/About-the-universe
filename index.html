@@ -17,34 +17,40 @@
         </figure>
         <nav class="header-navbar">
             <ul class="header-navbar-links-container">
-                <li class="header-navbar-link">Accueil</li>
-                <li class="header-navbar-link">Prochaine mission</li>
+                <li class="header-navbar-link"><a href="#" class="active">Accueil</a></li>
+                <li class="header-navbar-link"><a href="#">Prochaine mission</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
         <aside class="aside">
             <ul class="aside-links-container">
-                <li class="aside-link">
-                    <img src="./assets/img/icons/terre.png" alt="Icon terre">
-                    <p>Planètes</p>
-                </li>
-                <li class="aside-link">
-                    <img src="./assets/img/icons/navette.png" alt="Icon navette">
-                    <p>Véhicules</p>
-                </li>
-                <li class="aside-link">
-                    <img src="./assets/img/icons/personnage.png" alt="icon personnage">
-                    <p>Personnages</p>
-                </li>
+                <a href="#">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/terre.png" alt="Icon terre">
+                        <p>Planètes</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/navette.png" alt="Icon navette">
+                        <p>Véhicules</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/personnage.png" alt="icon personnage">
+                        <p>Personnages</p>
+                    </li>
+                </a>
             </ul>
         </aside>
         <section class="content">
             <section class="content-about">
                 <h1 class="content-about-title">About the universe</h1>
-                <p class="content-about-text">bienvenue sur <span class="site-name">About the universe</span> pour
+                <p class="content-about-text">Bienvenue sur <span class="site-name">About the universe</span> pour
                     découvrir toutes nos découvertes à propos du monde qui nous entoure</p>
-                <p class="content-about-button">Découvrir</p>
+                <a href="#" class="content-about-button">Découvrir</a>
             </section>
             <section class="content-figures">
                 <h2 class="content-figures-title">Les chiffres</h2>
@@ -53,23 +59,33 @@
                 <section class="content-figures-elements-container">
                     <article>
                         <img src="./assets/img/icons/people.png" alt="Icon personnes">
-                        <p class="content-figures-element">Nombre d'êtres vivants recencés</p>
-                        <p class="content-figures-number">82</p>
+                        <div class="infos">
+                            <p class="content-figures-element">Nombre d'êtres vivants recencés</p>
+                            <p class="content-figures-number-people"></p>
+                        </div>
                     </article>
                     <article>
                         <img src="./assets/img/icons/vaisseau2.png" alt="Icon vaisseau">
-                        <p class="content-figures-element">Nombre de véhicules recencés</p>
-                        <p class="content-figures-number">39</p>
+                        <div class="infos">
+                            <p class="content-figures-element">Nombre de véhicules recencés</p>
+                            <p class="content-figures-number-starship"></p>
+                        </div>
                     </article>
                     <article>
                         <img src="./assets/img/icons/terre2.png" alt="Icon terre">
-                        <p class="content-figures-element">Nombre de planètes recencés</p>
-                        <p class="content-figures-number">60</p>
+                        <div class="infos">
+                            <div class="infos">
+                                <p class="content-figures-element">Nombre de planètes recencés</p>
+                                <p class="content-figures-number-planet"></p>
+                            </div>
+                        </div>
                     </article>
                     <article>
                         <img src="./assets/img/icons/horloge.png" alt="Icon personnes">
-                        <p class="content-figures-element">Prochaine mission</p>
-                        <p class="content-figures-number">10 Juin 2021</p>
+                        <div class="infos">
+                            <p class="content-figures-element">Prochaine mission</p>
+                            <p class="content-figures-number">10 Juin 2021</p>
+                        </div>
                     </article>
                 </section>
                 <p class="content-figures-button">Participer à la prochaine mission</p>
