@@ -1,0 +1,46 @@
+.header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 5px $white solid;
+    border-left: 0;
+    border-right: 0;
+    padding: 5px;
+
+    .header-logo-container {
+        width: 150px;
+
+        .header-logo {
+            width: 100%;
+        }
+    }
+
+    .header-navbar {
+        gap: 10px;
+        color: $white;
+
+        ul {
+            display: flex;
+            gap: 10px;
+
+            li {
+                transition: all .5s linear;
+                cursor: pointer;
+
+                &:hover {
+                    color: $blue;
+                    transition: all .5s linear;
+                }
+
+                .active {
+                    color: $blue;
+                }
+
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
