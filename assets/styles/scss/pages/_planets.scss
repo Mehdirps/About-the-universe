@@ -1,0 +1,99 @@
+.planets-content {
+    position: relative;
+    width: 90%;
+    margin: 50px auto 50px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('../../../assets/img/space.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.503);
+    }
+
+    .planet-list {
+        flex: 40%;
+        z-index: 2;
+        height: 100%;
+        height: 60vh;
+
+        h2 {
+            text-transform: uppercase;
+            color: $white;
+            height: 7vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+            width: 100%;
+            height: 13vh;
+
+            select {
+                width: max-content;
+                border: 2px solid $white;
+                padding: 5px;
+                background-color: $black;
+                color: $white;
+            }
+
+            input {
+                width: 100%;
+                padding: 5px;
+                background-color: $black;
+
+                &::placeholder {
+                    color: grey;
+                }
+            }
+        }
+
+        .array {
+            width: 100%;
+            color: $white;
+            height: 40vh;
+
+            .array-head {
+                display: flex;
+                justify-content: space-between;
+                background-color: $blue;
+                padding: 5px;
+                height: 5vh;
+            }
+
+            .array-body {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                height: 100%;
+                overflow: scroll;
+                height: 33vh;
+
+                .array-item {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 2px solid $white;
+                    padding: 5px;
+                }
+            }
+        }
+
+        .item-number {
+            color: $white;
+        }
+    }
+}

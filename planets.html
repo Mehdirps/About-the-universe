@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Universe - Listes des planètes</title>
+    <link rel="stylesheet" href="./assets/styles/css/styles.css">
+    <script src="./assets/js/planets-scripts.js" defer></script>
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <figure class="header-logo-container">
+            <img src="./assets/img/logo.png" alt="Logo SpaceX" class="header-logo">
+        </figure>
+        <nav class="header-navbar">
+            <ul class="header-navbar-links-container">
+                <li class="header-navbar-link"><a href="index.html">Accueil</a></li>
+                <li class="header-navbar-link"><a href="#">Prochaine mission</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <aside class="aside">
+            <ul class="aside-links-container">
+                <a href="#" class="active">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/terre.png" alt="Icon terre">
+                        <p>Planètes</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/navette.png" alt="Icon navette">
+                        <p>Véhicules</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="aside-link">
+                        <img src="./assets/img/icons/personnage.png" alt="icon personnage">
+                        <p>Personnages</p>
+                    </li>
+                </a>
+            </ul>
+        </aside>
+        <section class="planets-content">
+            <section class="planet-list">
+                <h2>Planètes</h2>
+                <form>
+                    <select name="planete" id="planete">
+                        <option value="none">Par population</option>
+                    </select>
+                    <input type="text" name="search" id="search" placeholder="Faites votre recherche">
+                </form>
+                <section class="array">
+                    <div class="array-head">
+                        <p>Nom</p>
+                        <p>Terrain</p>
+                    </div>
+                    <div class="array-body">
+                    </div>
+                </section>
+                <p class="item-number"><span class="number"></span> résultat(s)</p>
+            </section>
+        </section>
+        <section class="planet-details">
+            <h2 class="name"></h2>
+            <p class="population">Population <span class="population-number"></span></p>
+            <div class="planet-infos">
+                <div class="planet-info">
+                    <p>Diamètre</p>
+                    <p class="size"></p>
+                </div>
+                <div class="planet-info">
+                    <p>Climat</p>
+                    <p class="climat"></p>
+                </div>
+                <div class="planet-info">
+                    <p>Gravité</p>
+                    <p class="gravity"></p>
+                </div>
+                <div class="planet-info">
+                    <p>Terrain</p>
+                    <p class="zone"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

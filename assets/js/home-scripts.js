@@ -25,22 +25,3 @@ function getPeopleCount() {
 getPeopleCount();
 getStarShipCount();
 getPlanetCount();
-
-function getPlanets() {
-    return new Promise(async resolve => {
-        let planets = [];
-        for (let i = 1; i <= 6; i++) {
-            const response = await fetch(`https://swapi.dev/api/planets/?page=${i}`);
-            const data = await response.json();
-
-            planets = planets.concat(data.results);
-
-        }
-        resolve(planets);
-    });
-}
-
-async function getPlanetsList() {
-    const planetArray = await getPlanets().length;
-    return planetArray;
-}
