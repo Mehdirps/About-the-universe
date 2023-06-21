@@ -1,6 +1,9 @@
-@import './reset';
 @import './variables';
+@import './reset';
+@import './components/header';
+@import './components/sidebar';
+@import './pages/home';
 
-body{
+body {
     background-color: $black;
 }
