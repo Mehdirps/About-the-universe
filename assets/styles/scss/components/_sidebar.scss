@@ -10,7 +10,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-content: center;
-        padding: 10px;
         max-width: 350px;
         margin: auto;
 
@@ -20,17 +19,29 @@
             gap: 30px;
         }
 
-        .aside-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            img {
-                width: 50px;
-            }
+        .active {
+            background-color: $blue;
 
             p {
-                color: $blue;
+                color: white !important;
+            }
+        }
+
+        a {
+            padding: 10px;
+
+            .aside-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                }
+
+                p {
+                    color: $blue;
+                }
             }
         }
     }

@@ -7,3 +7,12 @@
 body {
     background-color: $black;
 }
+
+.main {
+    min-height: 90vh;
+
+    @media screen and (min-width: 599px) {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+    }
+}
