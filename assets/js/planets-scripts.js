@@ -85,10 +85,18 @@ async function getPlanetDetails(planets) {
 
         planet.addEventListener('click', (e) => {
 
+            for (let planet of planetList) {
+                planet.classList.remove('active-planet');
+
+            }
+
             let planetName = e.target.attributes['name'].value;
 
+            if (planet.attributes['name'].value === planetName) {
+                planet.classList.add('active-planet');
+            }
+
             const planetFiltered = planets.filter(item => item.name === planetName);
-            
             document.querySelector('.planet-details .name').textContent = planetFiltered[0].name;
             document.querySelector('.population-number').textContent = planetFiltered[0].population;
             document.querySelector('.size').textContent = planetFiltered[0].diameter;
