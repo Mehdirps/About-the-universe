@@ -360,6 +360,74 @@ html {
   color: #5d95b6;
 }
 
+.blog {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto 50px;
+}
+.blog h2 {
+  color: #5d95b6;
+  margin: 20px 0 20px 0;
+}
+.blog .message {
+  width: 100%;
+  background-color: #25ac5f;
+  padding: 5px;
+  margin: 20px 0 20px 0;
+}
+.blog .blog-articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+.blog .blog-articles-container .blog-article {
+  flex: 450px;
+  max-width: 450px;
+  padding: 10px;
+  border: 2px solid #eeeeee;
+  display: grid;
+}
+.blog .blog-articles-container .blog-article .article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.blog .blog-articles-container .blog-article .article-content img {
+  width: 100%;
+}
+.blog .blog-articles-container .blog-article .article-content .description {
+  color: grey;
+}
+.blog .blog-articles-container .blog-article .buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+.blog .blog-articles-container .blog-article .buttons .update {
+  color: #4bb3d5;
+  cursor: pointer;
+}
+.blog .blog-articles-container .blog-article .buttons .delete {
+  color: #a03a3a;
+  cursor: pointer;
+}
+.blog .more-article,
+.blog .add-article {
+  padding: 5px;
+  width: 300px;
+  background-color: white;
+  color: #000000;
+  text-align: center;
+  font-weight: 800;
+  margin: 30px auto 30px;
+  cursor: pointer;
+}
+.blog .add-article {
+  background-color: #25ac5f;
+  color: #eeeeee;
+}
+
 body {
   background-color: #000000;
 }
