@@ -19,8 +19,6 @@ async function showArticles(index) {
     const articles = await getArticles();
     const articlesSliced = articles.slice(0, index)
 
-    console.log(articlesSliced);
-
     document.querySelector('.blog-articles-container').innerHTML = "";
 
     for (let article of articlesSliced) {
@@ -45,15 +43,18 @@ async function showArticles(index) {
         const buttonContainer = document.createElement('div');
         buttonContainer.classList.add('buttons');
 
-        const buttonMore = document.createElement('a');
-        buttonMore.textContent = "Modifier";
-        buttonMore.classList.add('update');
+        const buttonUpdate = document.createElement('a');
+        buttonUpdate.textContent = "Modifier";
+        buttonUpdate.href = `updatepost.html?id=${article.id}`
+        buttonUpdate.setAttribute('id', article.id);
+        buttonUpdate.classList.add('update');
 
         const buttonAdd = document.createElement('p');
         buttonAdd.textContent = "Supprimer";
+        buttonAdd.setAttribute('id', article.id);
         buttonAdd.classList.add('delete');
 
-        buttonContainer.appendChild(buttonMore);
+        buttonContainer.appendChild(buttonUpdate);
         buttonContainer.appendChild(buttonAdd);
 
         const articleContainer = document.createElement('article');
@@ -80,14 +81,31 @@ function showMoreArticle(index) {
 }
 
 
-function deletePost(){
-    document.querySelector('.delete').addEventListener('click', () => {
-        if(confirm('Le poste va être supprimé ! Etes vous sur ?')){
-            console.log('delete');
-        }else{
-            console.log('pas delete');
-        }
-    })
+async function deletePost() {
+    await showArticles();
+
+    const deletesButtons = document.querySelectorAll('.delete');
+
+    for (let btn of deletesButtons) {
+
+        btn.addEventListener('click', (e) => {
+
+            const id = e.target.attributes.id.value;
+            if (confirm('Le poste va être supprimé ! Etes vous sur ?')) {
+                
+                fetch(`https://freefakeapi.io/api/posts/${id}`, { method: 'DELETE' })
+                    .then(function (response) {
+                        if (response.status === 200) {
+                            document.querySelector('#message').textContent = 'Le poste à été supprimé'
+
+                        } else if (response.status !== 200) {
+                            document.querySelector('#message').textContent = "Votre poste n'à pas été supprimé suite à une erreur !"
+                        }
+                    })
+                    
+            }
+        })
+    }
 }
 
 onInit();
