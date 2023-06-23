@@ -1,5 +1,8 @@
 function onInit() {
-    showArticles();
+    let index = 6;
+    showArticles(index);
+    showMoreArticle(index);
+    deletePost();
 }
 
 function getArticles() {
@@ -11,9 +14,12 @@ function getArticles() {
     });
 }
 
-async function showArticles() {
+async function showArticles(index) {
+
     const articles = await getArticles();
-    const articlesSliced = articles.slice(0, 6)
+    const articlesSliced = articles.slice(0, index)
+
+    document.querySelector('.blog-articles-container').innerHTML = "";
 
     for (let article of articlesSliced) {
         let title = document.createElement('h3');
@@ -36,13 +42,13 @@ async function showArticles() {
 
         const buttonContainer = document.createElement('div');
         buttonContainer.classList.add('buttons');
-        
+
         const buttonMore = document.createElement('p');
         buttonMore.textContent = "Modifier";
         buttonMore.classList.add('update');
 
         const buttonAdd = document.createElement('p');
-        buttonAdd.textContent = "Ajouter un article";
+        buttonAdd.textContent = "Supprimer";
         buttonAdd.classList.add('delete');
 
         buttonContainer.appendChild(buttonMore);
@@ -57,6 +63,30 @@ async function showArticles() {
         const blog = document.querySelector('.blog-articles-container');
         blog.appendChild(articleContainer);
     }
+}
+
+function showMoreArticle(index) {
+    // Revoir cette function :  incrementation se fait que 1 fois passer new index dans variable dans onInit()
+    const moreButton = document.querySelector('.more-article');
+
+    moreButton.addEventListener('click', () => {
+
+        let newIndex = index + 6;
+
+        showArticles(newIndex);
+    })
+}
+
+
+function deletePost(){
+    document.querySelector('.delete').addEventListener('click', () => {
+        confirm('Le poste va être supprimé ! Etes vous sur ?')
+        if(confirm('Le poste va être supprimé ! Etes vous sur ?')){
+            console.log('delete');
+        }else{
+            console.log('pas delete');
+        }
+    })
 }
 
 onInit();
