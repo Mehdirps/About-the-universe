@@ -19,6 +19,8 @@ async function showArticles(index) {
     const articles = await getArticles();
     const articlesSliced = articles.slice(0, index)
 
+    console.log(articlesSliced);
+
     document.querySelector('.blog-articles-container').innerHTML = "";
 
     for (let article of articlesSliced) {
@@ -43,7 +45,7 @@ async function showArticles(index) {
         const buttonContainer = document.createElement('div');
         buttonContainer.classList.add('buttons');
 
-        const buttonMore = document.createElement('p');
+        const buttonMore = document.createElement('a');
         buttonMore.textContent = "Modifier";
         buttonMore.classList.add('update');
 
@@ -80,7 +82,6 @@ function showMoreArticle(index) {
 
 function deletePost(){
     document.querySelector('.delete').addEventListener('click', () => {
-        confirm('Le poste va être supprimé ! Etes vous sur ?')
         if(confirm('Le poste va être supprimé ! Etes vous sur ?')){
             console.log('delete');
         }else{
