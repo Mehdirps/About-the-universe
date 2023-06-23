@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About The Universe - Liste des articles</title>
+    <title>About The Universe - Ajouter un article</title>
     <link rel="stylesheet" href="./assets/styles/css/styles.css">
-    <script src="./assets/js/blog-scripts.js" defer></script>
+    <script src="./assets/js/update-post-scripts.js" defer></script>
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 
@@ -45,17 +45,23 @@
                 </a>
             </ul>
         </aside>
-        <section class="blog">
-            <h2>Liste des articles</h2>
-            <p id="message" class="message"></p>
-            <section class="blog-articles-container">
-                <!-- <div class="buttons">
-                    <p class="update">Modifier</p>
-                    <p class="delete">Supprimer</p>
-                </div> -->
-            </section>
-            <p class="more-article">+</p>
-            <a href="addpost.html" class="add-article">Ajouter un article</a>
+        <section class="update-article">
+            <p id="message-error"></p>
+            <form class="update-article-form">
+                <div class="item">
+                    <label for="title">Titre</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="item">
+                    <label for="img">Url image</label>
+                    <input type="text" name="img" id="img">
+                </div>
+                <div class="item">
+                    <label for="content">Contenu</label>
+                    <input type="text" name="content" id="content">
+                </div>
+                <button type="submit">Créer le poste</button>
+            </form>
         </section>
     </main>
 </body>
