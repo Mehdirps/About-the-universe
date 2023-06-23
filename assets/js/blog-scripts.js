@@ -1,5 +1,6 @@
+let index = 6;
+
 function onInit() {
-    let index = 6;
     showArticles(index);
     showMoreArticle(index);
     deletePost();
@@ -74,15 +75,15 @@ function showMoreArticle(index) {
 
     moreButton.addEventListener('click', () => {
 
-        let newIndex = index + 6;
+        index += 6;
 
-        showArticles(newIndex);
+        showArticles(index);
     })
 }
 
 
 async function deletePost() {
-    await showArticles();
+    await showArticles(index);
 
     const deletesButtons = document.querySelectorAll('.delete');
 
@@ -92,17 +93,17 @@ async function deletePost() {
 
             const id = e.target.attributes.id.value;
             if (confirm('Le poste va être supprimé ! Etes vous sur ?')) {
-                
-                fetch(`https://freefakeapi.io/api/posts/${id}`, { method: 'DELETE' })
-                    .then(function (response) {
-                        if (response.status === 200) {
-                            document.querySelector('#message').textContent = 'Le poste à été supprimé'
 
-                        } else if (response.status !== 200) {
-                            document.querySelector('#message').textContent = "Votre poste n'à pas été supprimé suite à une erreur !"
+                fetch(`https://freefakeapi.io/api/posts/${id}`, { method: 'DELETE'})
+                    .then(function (response) {
+                        if (response.status === 204) {
+                            document.querySelector('#message').textContent = 'Le poste à été supprimé';
+
+                        } else if (response.status !== 204) {
+                            document.querySelector('#message').textContent = "Votre poste n'à pas été supprimé suite à une erreur !";
                         }
                     })
-                    
+
             }
         })
     }
