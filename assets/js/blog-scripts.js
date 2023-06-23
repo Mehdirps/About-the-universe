@@ -1,5 +1,7 @@
 function onInit() {
-    showArticles();
+    let index = 6;
+    showArticles(index);
+    showMoreArticle(index);
 }
 
 function getArticles() {
@@ -11,9 +13,9 @@ function getArticles() {
     });
 }
 
-async function showArticles() {
+async function showArticles(index) {
     const articles = await getArticles();
-    const articlesSliced = articles.slice(0, 6)
+    const articlesSliced = articles.slice(0, index)
 
     for (let article of articlesSliced) {
         let title = document.createElement('h3');
@@ -36,7 +38,7 @@ async function showArticles() {
 
         const buttonContainer = document.createElement('div');
         buttonContainer.classList.add('buttons');
-        
+
         const buttonMore = document.createElement('p');
         buttonMore.textContent = "Modifier";
         buttonMore.classList.add('update');
@@ -59,4 +61,15 @@ async function showArticles() {
     }
 }
 
+function showMoreArticle(index) {
+    const moreButton = document.querySelector('.more-article');
+
+    moreButton.addEventListener('click', () => {
+        console.log('salut');
+
+        let newIndex = index + 6;
+
+        showArticles(newIndex);
+    })
+}
 onInit();
