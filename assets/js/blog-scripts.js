@@ -4,6 +4,15 @@ function onInit() {
     showArticles(index);
     showMoreArticle(index);
     deletePost();
+
+    const str = window.location.href;
+    const url = new URL(str);
+    const message = url.searchParams.get("message");
+
+    if (message !== "") {
+        document.querySelector('#message').textContent = message;
+    }
+
 }
 
 function getArticles() {
@@ -94,7 +103,7 @@ async function deletePost() {
             const id = e.target.attributes.id.value;
             if (confirm('Le poste va être supprimé ! Etes vous sur ?')) {
 
-                fetch(`https://freefakeapi.io/api/posts/${id}`, { method: 'DELETE'})
+                fetch(`https://freefakeapi.io/api/posts/${id}`, { method: 'DELETE' })
                     .then(function (response) {
                         if (response.status === 204) {
                             document.querySelector('#message').textContent = 'Le poste à été supprimé';
